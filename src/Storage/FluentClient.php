@@ -13,9 +13,9 @@ namespace LucaDegasperi\OAuth2Server\Storage;
 
 use Carbon\Carbon;
 use Illuminate\Database\ConnectionResolverInterface as Resolver;
-use LeagueFork\OAuth2\Server\Entity\ClientEntity;
-use LeagueFork\OAuth2\Server\Entity\SessionEntity;
-use LeagueFork\OAuth2\Server\Storage\ClientInterface;
+use joshstar\OAuth2\Server\Entity\ClientEntity;
+use joshstar\OAuth2\Server\Entity\SessionEntity;
+use joshstar\OAuth2\Server\Storage\ClientInterface;
 
 /**
  * This is the fluent client class.
@@ -71,7 +71,7 @@ class FluentClient extends AbstractFluentAdapter implements ClientInterface
      * @param string $redirectUri
      * @param string $grantType
      *
-     * @return null|\LeagueFork\OAuth2\Server\Entity\ClientEntity
+     * @return null|\joshstar\OAuth2\Server\Entity\ClientEntity
      */
     public function get($clientId, $clientSecret = null, $redirectUri = null, $grantType = null)
     {
@@ -126,9 +126,9 @@ class FluentClient extends AbstractFluentAdapter implements ClientInterface
     /**
      * Get the client associated with a session.
      *
-     * @param  \LeagueFork\OAuth2\Server\Entity\SessionEntity $session The session
+     * @param  \joshstar\OAuth2\Server\Entity\SessionEntity $session The session
      *
-     * @return null|\LeagueFork\OAuth2\Server\Entity\ClientEntity
+     * @return null|\joshstar\OAuth2\Server\Entity\ClientEntity
      */
     public function getBySession(SessionEntity $session)
     {
@@ -173,7 +173,7 @@ class FluentClient extends AbstractFluentAdapter implements ClientInterface
      *
      * @param $result
      *
-     * @return \LeagueFork\OAuth2\Server\Entity\ClientEntity
+     * @return \joshstar\OAuth2\Server\Entity\ClientEntity
      */
     protected function hydrateEntity($result)
     {

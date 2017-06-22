@@ -5,7 +5,7 @@
   ```php
   'grant_types' => [
       'refresh_token' => [
-          'class' => '\LeagueFork\OAuth2\Server\Grant\RefreshTokenGrant',
+          'class' => '\joshstar\OAuth2\Server\Grant\RefreshTokenGrant',
           'access_token_ttl' => 3600,
           'refresh_token_ttl' => 36000
       ]

@@ -12,9 +12,9 @@
 namespace LucaDegasperi\OAuth2Server\Storage;
 
 use Carbon\Carbon;
-use LeagueFork\OAuth2\Server\Entity\AccessTokenEntity;
-use LeagueFork\OAuth2\Server\Entity\ScopeEntity;
-use LeagueFork\OAuth2\Server\Storage\AccessTokenInterface;
+use joshstar\OAuth2\Server\Entity\AccessTokenEntity;
+use joshstar\OAuth2\Server\Entity\ScopeEntity;
+use joshstar\OAuth2\Server\Storage\AccessTokenInterface;
 
 /**
  * This is the fluent access token class.
@@ -67,9 +67,9 @@ class FluentAccessToken extends AbstractFluentAdapter implements AccessTokenInte
     /**
      * Get the scopes for an access token.
      *
-     * @param \LeagueFork\OAuth2\Server\Entity\AccessTokenEntity $token The access token
+     * @param \joshstar\OAuth2\Server\Entity\AccessTokenEntity $token The access token
      *
-     * @return array Array of \LeagueFork\OAuth2\Server\Entity\ScopeEntity
+     * @return array Array of \joshstar\OAuth2\Server\Entity\ScopeEntity
      */
     public function getScopes(AccessTokenEntity $token)
     {
@@ -98,7 +98,7 @@ class FluentAccessToken extends AbstractFluentAdapter implements AccessTokenInte
      * @param int $expireTime The expire time expressed as a unix timestamp
      * @param string|int $sessionId The session ID
      *
-     * @return \LeagueFork\OAuth2\Server\Entity\AccessTokenEntity
+     * @return \joshstar\OAuth2\Server\Entity\AccessTokenEntity
      */
     public function create($token, $expireTime, $sessionId)
     {
@@ -118,8 +118,8 @@ class FluentAccessToken extends AbstractFluentAdapter implements AccessTokenInte
     /**
      * Associate a scope with an access token.
      *
-     * @param \LeagueFork\OAuth2\Server\Entity\AccessTokenEntity $token The access token
-     * @param \LeagueFork\OAuth2\Server\Entity\ScopeEntity $scope The scope
+     * @param \joshstar\OAuth2\Server\Entity\AccessTokenEntity $token The access token
+     * @param \joshstar\OAuth2\Server\Entity\ScopeEntity $scope The scope
      *
      * @return void
      */
@@ -136,7 +136,7 @@ class FluentAccessToken extends AbstractFluentAdapter implements AccessTokenInte
     /**
      * Delete an access token.
      *
-     * @param \LeagueFork\OAuth2\Server\Entity\AccessTokenEntity $token The access token to delete
+     * @param \joshstar\OAuth2\Server\Entity\AccessTokenEntity $token The access token to delete
      *
      * @return void
      */

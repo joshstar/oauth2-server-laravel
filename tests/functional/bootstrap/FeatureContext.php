@@ -10,7 +10,7 @@
  */
 
 use Behat\Behat\Exception\PendingException;
-use LeagueFork\OAuth2\Server\Grant\ClientCredentialsGrant;
+use joshstar\OAuth2\Server\Grant\ClientCredentialsGrant;
 use LucaDegasperi\OAuth2Server\Tests\Database\Seeders\OAuth2DatabaseSeeder;
 use Orchestra\Testbench\BehatFeatureContext;
 use PHPUnit_Framework_Assert as PHPUnit;

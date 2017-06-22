@@ -12,7 +12,7 @@
 namespace LucaDegasperi\OAuth2Server\Middleware;
 
 use Closure;
-use LeagueFork\OAuth2\Server\Exception\InvalidScopeException;
+use joshstar\OAuth2\Server\Exception\InvalidScopeException;
 use LucaDegasperi\OAuth2Server\Authorizer;
 
 /**
@@ -55,7 +55,7 @@ class OAuthMiddleware
      * @param \Closure $next
      * @param string|null $scopesString
      *
-     * @throws \LeagueFork\OAuth2\Server\Exception\InvalidScopeException
+     * @throws \joshstar\OAuth2\Server\Exception\InvalidScopeException
      *
      * @return mixed
      */
@@ -80,7 +80,7 @@ class OAuthMiddleware
      *
      * @param $scopes
      *
-     * @throws \LeagueFork\OAuth2\Server\Exception\InvalidScopeException
+     * @throws \joshstar\OAuth2\Server\Exception\InvalidScopeException
      */
     public function validateScopes($scopes)
     {

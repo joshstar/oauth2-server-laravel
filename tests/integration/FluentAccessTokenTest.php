@@ -16,7 +16,7 @@ class FluentAccessTokenTest extends AbstractDBTestCase
 {
     public function getAccessTokenRepository()
     {
-        $server = m::mock('LeagueFork\OAuth2\Server\AbstractServer');
+        $server = m::mock('joshstar\OAuth2\Server\AbstractServer');
         $repo = new FluentAccessToken($this->app['db']);
         $repo->setServer($server);
 
@@ -29,7 +29,7 @@ class FluentAccessTokenTest extends AbstractDBTestCase
 
         $result = $repo->get('totallyanaccesstoken1');
 
-        $this->assertInstanceOf('LeagueFork\OAuth2\Server\Entity\AccessTokenEntity', $result);
+        $this->assertInstanceOf('joshstar\OAuth2\Server\Entity\AccessTokenEntity', $result);
         $this->assertEquals('totallyanaccesstoken1', $result->getId());
         $this->assertInternalType('int', $result->getExpireTime());
     }
@@ -45,21 +45,21 @@ class FluentAccessTokenTest extends AbstractDBTestCase
 
     /*public function test_it_fetches_an_access_token_object_with_a_valid_refresh_token()
     {
-        $token = m::mock('LeagueFork\OAuth2\Server\Entity\RefreshTokenEntity');
+        $token = m::mock('joshstar\OAuth2\Server\Entity\RefreshTokenEntity');
         $token->shouldReceive('getId')->once()->andReturn('totallyarefreshtoken1');
 
         $repo = $this->getAccessTokenRepository();
 
         $result = $repo->getByRefreshToken($token);
 
-        $this->assertInstanceOf('LeagueFork\OAuth2\Server\Entity\AccessTokenEntity', $result);
+        $this->assertInstanceOf('joshstar\OAuth2\Server\Entity\AccessTokenEntity', $result);
         $this->assertEquals('totallyanaccesstoken1', $result->getId());
         $this->assertInternalType('int', $result->getExpireTime());
     }
 
     public function test_it_returns_null_with_an_invalid_refresh_token()
     {
-        $token = m::mock('LeagueFork\OAuth2\Server\Entity\RefreshTokenEntity');
+        $token = m::mock('joshstar\OAuth2\Server\Entity\RefreshTokenEntity');
         $token->shouldReceive('getId')->once()->andReturn('notarefreshtoken');
 
         $repo = $this->getAccessTokenRepository();
@@ -71,7 +71,7 @@ class FluentAccessTokenTest extends AbstractDBTestCase
 
     public function test_it_deletes_an_access_token()
     {
-        $token = m::mock('LeagueFork\OAuth2\Server\Entity\AccessTokenEntity');
+        $token = m::mock('joshstar\OAuth2\Server\Entity\AccessTokenEntity');
         $token->shouldReceive('getId')->once()->andReturn('totallyanaccesstoken1');
 
         $repo = $this->getAccessTokenRepository();
@@ -84,13 +84,13 @@ class FluentAccessTokenTest extends AbstractDBTestCase
 
     public function test_it_associates_scopes()
     {
-        $token = m::mock('LeagueFork\OAuth2\Server\Entity\AccessTokenEntity');
+        $token = m::mock('joshstar\OAuth2\Server\Entity\AccessTokenEntity');
         $token->shouldReceive('getId')->times(4)->andReturn('totallyanaccesstoken1');
 
-        $scope1 = m::mock('LeagueFork\OAuth2\Server\Entity\ScopeEntity');
+        $scope1 = m::mock('joshstar\OAuth2\Server\Entity\ScopeEntity');
         $scope1->shouldReceive('getId')->once()->andReturn('scope1');
 
-        $scope2 = m::mock('LeagueFork\OAuth2\Server\Entity\ScopeEntity');
+        $scope2 = m::mock('joshstar\OAuth2\Server\Entity\ScopeEntity');
         $scope2->shouldReceive('getId')->once()->andReturn('scope2');
 
         $repo = $this->getAccessTokenRepository();
@@ -110,7 +110,7 @@ class FluentAccessTokenTest extends AbstractDBTestCase
 
         $first = $result2[0];
 
-        $this->assertInstanceOf('LeagueFork\OAuth2\Server\Entity\ScopeEntity', $first);
+        $this->assertInstanceOf('joshstar\OAuth2\Server\Entity\ScopeEntity', $first);
         $this->assertEquals('scope1', $first->getId());
     }
 
@@ -121,7 +121,7 @@ class FluentAccessTokenTest extends AbstractDBTestCase
         $time = time() + 120;
         $result = $repo->create('accesstoken', $time, 1);
 
-        $this->assertInstanceOf('LeagueFork\OAuth2\Server\Entity\AccessTokenEntity', $result);
+        $this->assertInstanceOf('joshstar\OAuth2\Server\Entity\AccessTokenEntity', $result);
         $this->assertEquals('accesstoken', $result->getId());
         $this->assertInternalType('int', $result->getExpireTime());
         $this->assertEquals($time, $result->getExpireTime());

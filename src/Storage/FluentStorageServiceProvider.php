@@ -13,12 +13,12 @@ namespace LucaDegasperi\OAuth2Server\Storage;
 
 use Illuminate\Contracts\Container\Container as Application;
 use Illuminate\Support\ServiceProvider;
-use LeagueFork\OAuth2\Server\Storage\AccessTokenInterface;
-use LeagueFork\OAuth2\Server\Storage\AuthCodeInterface;
-use LeagueFork\OAuth2\Server\Storage\ClientInterface;
-use LeagueFork\OAuth2\Server\Storage\RefreshTokenInterface;
-use LeagueFork\OAuth2\Server\Storage\ScopeInterface;
-use LeagueFork\OAuth2\Server\Storage\SessionInterface;
+use joshstar\OAuth2\Server\Storage\AccessTokenInterface;
+use joshstar\OAuth2\Server\Storage\AuthCodeInterface;
+use joshstar\OAuth2\Server\Storage\ClientInterface;
+use joshstar\OAuth2\Server\Storage\RefreshTokenInterface;
+use joshstar\OAuth2\Server\Storage\ScopeInterface;
+use joshstar\OAuth2\Server\Storage\SessionInterface;
 
 /**
  * This is the fluent storage service provider class.

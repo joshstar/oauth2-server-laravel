@@ -12,7 +12,7 @@
 namespace unit\LucaDegasperi\OAuth2Server\Middleware;
 
 use Illuminate\Http\Request;
-use LeagueFork\OAuth2\Server\Exception\AccessDeniedException;
+use joshstar\OAuth2\Server\Exception\AccessDeniedException;
 use LucaDegasperi\OAuth2Server\Authorizer;
 use PhpSpec\ObjectBehavior;
 

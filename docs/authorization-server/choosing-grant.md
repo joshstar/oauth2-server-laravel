@@ -32,7 +32,7 @@ As a refresher here is a quick glossary of OAuth terms (taken from the core spec
 > ```php
 > 'grant_types' => [
 >     'authorization_code' => [
->         'class' => '\LeagueFork\OAuth2\Server\Grant\AuthCodeGrant',
+>         'class' => '\joshstar\OAuth2\Server\Grant\AuthCodeGrant',
 >         'access_token_ttl' => 3600,
 >         'auth_token_ttl' => 60
 >     ]
@@ -67,7 +67,7 @@ To enable this grant:
 ```php
 'grant_types' => [
     'password' => [
-        'class' => '\LeagueFork\OAuth2\Server\Grant\PasswordGrant',
+        'class' => '\joshstar\OAuth2\Server\Grant\PasswordGrant',
         'callback' => '\YourAppNamespace\Verifier@verify',
         'access_token_ttl' => 3600
     ]
@@ -84,7 +84,7 @@ To enable this grant:
 ```php
 'grant_types' => [
     'client_credentials' => [
-        'class' => '\LeagueFork\OAuth2\Server\Grant\ClientCredentialsGrant',
+        'class' => '\joshstar\OAuth2\Server\Grant\ClientCredentialsGrant',
         'access_token_ttl' => 3600
     ]
 ]
@@ -102,7 +102,7 @@ To enable this grant:
 ```php
 'grant_types' => [
     'refresh_token' => [
-        'class' => '\LeagueFork\OAuth2\Server\Grant\RefreshTokenGrant',
+        'class' => '\joshstar\OAuth2\Server\Grant\RefreshTokenGrant',
         'access_token_ttl' => 3600,
         'refresh_token_ttl' => 36000
     ]

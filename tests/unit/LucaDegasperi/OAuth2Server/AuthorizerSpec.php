@@ -11,13 +11,13 @@
 
 namespace unit\LucaDegasperi\OAuth2Server;
 
-use LeagueFork\OAuth2\Server\AuthorizationServer;
-use LeagueFork\OAuth2\Server\Entity\AccessTokenEntity;
-use LeagueFork\OAuth2\Server\Entity\ClientEntity;
-use LeagueFork\OAuth2\Server\Entity\SessionEntity;
-use LeagueFork\OAuth2\Server\Grant\AuthCodeGrant;
-use LeagueFork\OAuth2\Server\ResourceServer;
-use LeagueFork\OAuth2\Server\Util\RedirectUri;
+use joshstar\OAuth2\Server\AuthorizationServer;
+use joshstar\OAuth2\Server\Entity\AccessTokenEntity;
+use joshstar\OAuth2\Server\Entity\ClientEntity;
+use joshstar\OAuth2\Server\Entity\SessionEntity;
+use joshstar\OAuth2\Server\Grant\AuthCodeGrant;
+use joshstar\OAuth2\Server\ResourceServer;
+use joshstar\OAuth2\Server\Util\RedirectUri;
 use LucaDegasperi\OAuth2Server\Exceptions\NoActiveAccessTokenException;
 use PhpSpec\ObjectBehavior;
 use Symfony\Component\HttpFoundation\Request;

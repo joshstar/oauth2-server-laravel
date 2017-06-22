@@ -12,8 +12,8 @@
 namespace LucaDegasperi\OAuth2Server\Storage;
 
 use Carbon\Carbon;
-use LeagueFork\OAuth2\Server\Entity\RefreshTokenEntity;
-use LeagueFork\OAuth2\Server\Storage\RefreshTokenInterface;
+use joshstar\OAuth2\Server\Entity\RefreshTokenEntity;
+use joshstar\OAuth2\Server\Storage\RefreshTokenInterface;
 
 /**
  * This is the fluent refresh token class.
@@ -23,11 +23,11 @@ use LeagueFork\OAuth2\Server\Storage\RefreshTokenInterface;
 class FluentRefreshToken extends AbstractFluentAdapter implements RefreshTokenInterface
 {
     /**
-     * Return a new instance of \LeagueFork\OAuth2\Server\Entity\RefreshTokenEntity.
+     * Return a new instance of \joshstar\OAuth2\Server\Entity\RefreshTokenEntity.
      *
      * @param string $token
      *
-     * @return \LeagueFork\OAuth2\Server\Entity\RefreshTokenEntity
+     * @return \joshstar\OAuth2\Server\Entity\RefreshTokenEntity
      */
     public function get($token)
     {
@@ -53,7 +53,7 @@ class FluentRefreshToken extends AbstractFluentAdapter implements RefreshTokenIn
      * @param  int $expireTime
      * @param  string $accessToken
      *
-     * @return \LeagueFork\OAuth2\Server\Entity\RefreshTokenEntity
+     * @return \joshstar\OAuth2\Server\Entity\RefreshTokenEntity
      */
     public function create($token, $expireTime, $accessToken)
     {
@@ -74,7 +74,7 @@ class FluentRefreshToken extends AbstractFluentAdapter implements RefreshTokenIn
     /**
      * Delete the refresh token.
      *
-     * @param  \LeagueFork\OAuth2\Server\Entity\RefreshTokenEntity $token
+     * @param  \joshstar\OAuth2\Server\Entity\RefreshTokenEntity $token
      *
      * @return void
      */

@@ -4,7 +4,7 @@
 
 > **Note:** This package is no longer maintaned for Laravel 5.3+ since Laravel now features the [Passport package](https://laravel.com/docs/passport).
 
-[OAuth 2.0](http://tools.ietf.org/wg/oauth/draft-ietf-oauth-v2/) authorization server and resource server for the Laravel and Lumen frameworks. Standard compliant thanks to the amazing work by [The LeagueFork of Extraordinary Packages](http://www.thephpleague.com) OAuth 2.0 authorization server and resource server.
+[OAuth 2.0](http://tools.ietf.org/wg/oauth/draft-ietf-oauth-v2/) authorization server and resource server for the Laravel and Lumen frameworks. Standard compliant thanks to the amazing work by [The joshstar of Extraordinary Packages](http://www.thephpleague.com) OAuth 2.0 authorization server and resource server.
 
 [![Latest Version](http://img.shields.io/github/release/lucadegasperi/oauth2-server-laravel.svg?style=flat-square)](https://github.com/lucadegasperi/oauth2-server-laravel/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)

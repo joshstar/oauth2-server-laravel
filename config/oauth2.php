@@ -39,11 +39,11 @@ return [
     | This will tell the authorization server the output format for the access
     | token and the resource server how to parse the access token used.
     |
-    | Default value is LeagueFork\OAuth2\Server\TokenType\Bearer
+    | Default value is joshstar\OAuth2\Server\TokenType\Bearer
     |
     */
 
-    'token_type' => 'LeagueFork\OAuth2\Server\TokenType\Bearer',
+    'token_type' => 'joshstar\OAuth2\Server\TokenType\Bearer',
 
     /*
     |--------------------------------------------------------------------------

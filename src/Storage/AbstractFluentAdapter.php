@@ -12,7 +12,7 @@
 namespace LucaDegasperi\OAuth2Server\Storage;
 
 use Illuminate\Database\ConnectionResolverInterface as Resolver;
-use LeagueFork\OAuth2\Server\Storage\AbstractStorage;
+use joshstar\OAuth2\Server\Storage\AbstractStorage;
 
 /**
  * This is the abstract fluent adapter class.

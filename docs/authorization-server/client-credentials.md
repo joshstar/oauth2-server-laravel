@@ -5,7 +5,7 @@
   ```php
   'grant_types' => [
        'client_credentials' => [
-          'class' => '\LeagueFork\OAuth2\Server\Grant\ClientCredentialsGrant',
+          'class' => '\joshstar\OAuth2\Server\Grant\ClientCredentialsGrant',
           'access_token_ttl' => 3600
       ]
   ]

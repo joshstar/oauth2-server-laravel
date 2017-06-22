@@ -12,9 +12,9 @@
 namespace LucaDegasperi\OAuth2Server\Storage;
 
 use Carbon\Carbon;
-use LeagueFork\OAuth2\Server\Entity\AuthCodeEntity;
-use LeagueFork\OAuth2\Server\Entity\ScopeEntity;
-use LeagueFork\OAuth2\Server\Storage\AuthCodeInterface;
+use joshstar\OAuth2\Server\Entity\AuthCodeEntity;
+use joshstar\OAuth2\Server\Entity\ScopeEntity;
+use joshstar\OAuth2\Server\Storage\AuthCodeInterface;
 
 /**
  * This is the fluent auth code class.
@@ -28,7 +28,7 @@ class FluentAuthCode extends AbstractFluentAdapter implements AuthCodeInterface
      *
      * @param  string $code
      *
-     * @return \LeagueFork\OAuth2\Server\Entity\AuthCodeEntity
+     * @return \joshstar\OAuth2\Server\Entity\AuthCodeEntity
      */
     public function get($code)
     {
@@ -50,9 +50,9 @@ class FluentAuthCode extends AbstractFluentAdapter implements AuthCodeInterface
     /**
      * Get the scopes for an access token.
      *
-     * @param \LeagueFork\OAuth2\Server\Entity\AuthCodeEntity $token The auth code
+     * @param \joshstar\OAuth2\Server\Entity\AuthCodeEntity $token The auth code
      *
-     * @return array Array of \LeagueFork\OAuth2\Server\Entity\ScopeEntity
+     * @return array Array of \joshstar\OAuth2\Server\Entity\ScopeEntity
      */
     public function getScopes(AuthCodeEntity $token)
     {
@@ -77,8 +77,8 @@ class FluentAuthCode extends AbstractFluentAdapter implements AuthCodeInterface
     /**
      * Associate a scope with an access token.
      *
-     * @param  \LeagueFork\OAuth2\Server\Entity\AuthCodeEntity $token The auth code
-     * @param  \LeagueFork\OAuth2\Server\Entity\ScopeEntity $scope The scope
+     * @param  \joshstar\OAuth2\Server\Entity\AuthCodeEntity $token The auth code
+     * @param  \joshstar\OAuth2\Server\Entity\ScopeEntity $scope The scope
      *
      * @return void
      */
@@ -95,7 +95,7 @@ class FluentAuthCode extends AbstractFluentAdapter implements AuthCodeInterface
     /**
      * Delete an access token.
      *
-     * @param  \LeagueFork\OAuth2\Server\Entity\AuthCodeEntity $token The access token to delete
+     * @param  \joshstar\OAuth2\Server\Entity\AuthCodeEntity $token The access token to delete
      *
      * @return void
      */

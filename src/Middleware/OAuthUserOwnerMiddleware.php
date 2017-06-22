@@ -12,7 +12,7 @@
 namespace LucaDegasperi\OAuth2Server\Middleware;
 
 use Closure;
-use LeagueFork\OAuth2\Server\Exception\AccessDeniedException;
+use joshstar\OAuth2\Server\Exception\AccessDeniedException;
 use LucaDegasperi\OAuth2Server\Authorizer;
 
 /**
@@ -45,7 +45,7 @@ class OAuthUserOwnerMiddleware
      * @param \Illuminate\Http\Request $request
      * @param \Closure $next
      *
-     * @throws \LeagueFork\OAuth2\Server\Exception\AccessDeniedException
+     * @throws \joshstar\OAuth2\Server\Exception\AccessDeniedException
      *
      * @return mixed
      */

@@ -12,11 +12,11 @@
 namespace LucaDegasperi\OAuth2Server\Storage;
 
 use Carbon\Carbon;
-use LeagueFork\OAuth2\Server\Entity\AccessTokenEntity;
-use LeagueFork\OAuth2\Server\Entity\AuthCodeEntity;
-use LeagueFork\OAuth2\Server\Entity\ScopeEntity;
-use LeagueFork\OAuth2\Server\Entity\SessionEntity;
-use LeagueFork\OAuth2\Server\Storage\SessionInterface;
+use joshstar\OAuth2\Server\Entity\AccessTokenEntity;
+use joshstar\OAuth2\Server\Entity\AuthCodeEntity;
+use joshstar\OAuth2\Server\Entity\ScopeEntity;
+use joshstar\OAuth2\Server\Entity\SessionEntity;
+use joshstar\OAuth2\Server\Storage\SessionInterface;
 
 /**
  * This is the fluent session class.
@@ -30,7 +30,7 @@ class FluentSession extends AbstractFluentAdapter implements SessionInterface
      *
      * @param string $sessionId
      *
-     * @return \LeagueFork\OAuth2\Server\Entity\SessionEntity
+     * @return \joshstar\OAuth2\Server\Entity\SessionEntity
      */
     public function get($sessionId)
     {
@@ -50,9 +50,9 @@ class FluentSession extends AbstractFluentAdapter implements SessionInterface
     /**
      * Get a session from an access token.
      *
-     * @param \LeagueFork\OAuth2\Server\Entity\AccessTokenEntity $accessToken The access token
+     * @param \joshstar\OAuth2\Server\Entity\AccessTokenEntity $accessToken The access token
      *
-     * @return \LeagueFork\OAuth2\Server\Entity\SessionEntity
+     * @return \joshstar\OAuth2\Server\Entity\SessionEntity
      */
     public function getByAccessToken(AccessTokenEntity $accessToken)
     {
@@ -74,9 +74,9 @@ class FluentSession extends AbstractFluentAdapter implements SessionInterface
     /**
      * Get a session's scopes.
      *
-     * @param \LeagueFork\OAuth2\Server\Entity\SessionEntity
+     * @param \joshstar\OAuth2\Server\Entity\SessionEntity
      *
-     * @return array Array of \LeagueFork\OAuth2\Server\Entity\ScopeEntity
+     * @return array Array of \joshstar\OAuth2\Server\Entity\ScopeEntity
      */
     public function getScopes(SessionEntity $session)
     {
@@ -124,8 +124,8 @@ class FluentSession extends AbstractFluentAdapter implements SessionInterface
     /**
      * Associate a scope with a session.
      *
-     * @param \LeagueFork\OAuth2\Server\Entity\SessionEntity $session
-     * @param \LeagueFork\OAuth2\Server\Entity\ScopeEntity $scope The scopes ID might be an integer or string
+     * @param \joshstar\OAuth2\Server\Entity\SessionEntity $session
+     * @param \joshstar\OAuth2\Server\Entity\ScopeEntity $scope The scopes ID might be an integer or string
      *
      * @return void
      */
@@ -142,9 +142,9 @@ class FluentSession extends AbstractFluentAdapter implements SessionInterface
     /**
      * Get a session from an auth code.
      *
-     * @param \LeagueFork\OAuth2\Server\Entity\AuthCodeEntity $authCode The auth code
+     * @param \joshstar\OAuth2\Server\Entity\AuthCodeEntity $authCode The auth code
      *
-     * @return \LeagueFork\OAuth2\Server\Entity\SessionEntity
+     * @return \joshstar\OAuth2\Server\Entity\SessionEntity
      */
     public function getByAuthCode(AuthCodeEntity $authCode)
     {

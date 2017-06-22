@@ -10,7 +10,7 @@ An array of grant types supported by the authorization server to obtain an acces
 ### `token_type`
 options: `string`
 
-default: `LeagueFork\OAuth2\Server\TokenType\Bearer`
+default: `joshstar\OAuth2\Server\TokenType\Bearer`
 
 This option informs the authorization server how the returned tokens should be formatted.
 
