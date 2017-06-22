@@ -11,11 +11,11 @@
 
 namespace LucaDegasperi\OAuth2Server;
 
-use League\OAuth2\Server\AuthorizationServer as Issuer;
-use League\OAuth2\Server\Exception\AccessDeniedException;
-use League\OAuth2\Server\ResourceServer as Checker;
-use League\OAuth2\Server\TokenType\TokenTypeInterface;
-use League\OAuth2\Server\Util\RedirectUri;
+use LeagueFork\OAuth2\Server\AuthorizationServer as Issuer;
+use LeagueFork\OAuth2\Server\Exception\AccessDeniedException;
+use LeagueFork\OAuth2\Server\ResourceServer as Checker;
+use LeagueFork\OAuth2\Server\TokenType\TokenTypeInterface;
+use LeagueFork\OAuth2\Server\Util\RedirectUri;
 use LucaDegasperi\OAuth2Server\Exceptions\NoActiveAccessTokenException;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -29,14 +29,14 @@ class Authorizer
     /**
      * The authorization server (aka the issuer).
      *
-     * @var \League\OAuth2\Server\AuthorizationServer
+     * @var \LeagueFork\OAuth2\Server\AuthorizationServer
      */
     protected $issuer;
 
     /**
      * The resource server (aka the checker).
      *
-     * @var \League\OAuth2\Server\ResourceServer
+     * @var \LeagueFork\OAuth2\Server\ResourceServer
      */
     protected $checker;
 
@@ -57,8 +57,8 @@ class Authorizer
     /**
      * Create a new Authorizer instance.
      *
-     * @param \League\OAuth2\Server\AuthorizationServer $issuer
-     * @param \League\OAuth2\Server\ResourceServer $checker
+     * @param \LeagueFork\OAuth2\Server\AuthorizationServer $issuer
+     * @param \LeagueFork\OAuth2\Server\ResourceServer $checker
      */
     public function __construct(Issuer $issuer, Checker $checker)
     {
@@ -70,7 +70,7 @@ class Authorizer
     /**
      * Get the issuer.
      *
-     * @return \League\OAuth2\Server\AuthorizationServer
+     * @return \LeagueFork\OAuth2\Server\AuthorizationServer
      */
     public function getIssuer()
     {
@@ -80,7 +80,7 @@ class Authorizer
     /**
      * Get the checker.
      *
-     * @return \League\OAuth2\Server\ResourceServer
+     * @return \LeagueFork\OAuth2\Server\ResourceServer
      */
     public function getChecker()
     {
@@ -94,7 +94,7 @@ class Authorizer
      *
      * @throws \LucaDegasperi\OAuth2Server\Exceptions\NoActiveAccessTokenException
      *
-     * @return \League\OAuth2\Server\Entity\AccessTokenEntity
+     * @return \LeagueFork\OAuth2\Server\Entity\AccessTokenEntity
      */
     public function getAccessToken()
     {
@@ -299,7 +299,7 @@ class Authorizer
     /**
      * Set the token type to use.
      *
-     * @param \League\OAuth2\Server\TokenType\TokenTypeInterface $tokenType
+     * @param \LeagueFork\OAuth2\Server\TokenType\TokenTypeInterface $tokenType
      */
     public function setTokenType(TokenTypeInterface $tokenType)
     {

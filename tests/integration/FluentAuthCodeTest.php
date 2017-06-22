@@ -16,7 +16,7 @@ class FluentAuthCodeTest extends AbstractDBTestCase
 {
     public function getAuthCodeRepository()
     {
-        $server = m::mock('League\OAuth2\Server\AbstractServer');
+        $server = m::mock('LeagueFork\OAuth2\Server\AbstractServer');
         $repo = new FluentAuthCode($this->app['db']);
         $repo->setServer($server);
 
@@ -29,7 +29,7 @@ class FluentAuthCodeTest extends AbstractDBTestCase
 
         $result = $repo->get('totallyanauthcode1');
 
-        $this->assertInstanceOf('League\OAuth2\Server\Entity\AuthCodeEntity', $result);
+        $this->assertInstanceOf('LeagueFork\OAuth2\Server\Entity\AuthCodeEntity', $result);
         $this->assertEquals('totallyanauthcode1', $result->getId());
         $this->assertInternalType('int', $result->getExpireTime());
     }
@@ -45,7 +45,7 @@ class FluentAuthCodeTest extends AbstractDBTestCase
 
     public function test_it_deletes_an_auth_code()
     {
-        $code = m::mock('League\OAuth2\Server\Entity\AuthCodeEntity');
+        $code = m::mock('LeagueFork\OAuth2\Server\Entity\AuthCodeEntity');
         $code->shouldReceive('getId')->once()->andReturn('totallyanauthcode1');
 
         $repo = $this->getAuthCodeRepository();
@@ -58,13 +58,13 @@ class FluentAuthCodeTest extends AbstractDBTestCase
 
     public function test_it_associates_scopes()
     {
-        $code = m::mock('League\OAuth2\Server\Entity\AuthCodeEntity');
+        $code = m::mock('LeagueFork\OAuth2\Server\Entity\AuthCodeEntity');
         $code->shouldReceive('getId')->times(4)->andReturn('totallyanauthcode1');
 
-        $scope1 = m::mock('League\OAuth2\Server\Entity\ScopeEntity');
+        $scope1 = m::mock('LeagueFork\OAuth2\Server\Entity\ScopeEntity');
         $scope1->shouldReceive('getId')->once()->andReturn('scope1');
 
-        $scope2 = m::mock('League\OAuth2\Server\Entity\ScopeEntity');
+        $scope2 = m::mock('LeagueFork\OAuth2\Server\Entity\ScopeEntity');
         $scope2->shouldReceive('getId')->once()->andReturn('scope2');
 
         $repo = $this->getAuthCodeRepository();
@@ -84,7 +84,7 @@ class FluentAuthCodeTest extends AbstractDBTestCase
 
         $first = $result2[0];
 
-        $this->assertInstanceOf('League\OAuth2\Server\Entity\ScopeEntity', $first);
+        $this->assertInstanceOf('LeagueFork\OAuth2\Server\Entity\ScopeEntity', $first);
         $this->assertEquals('scope1', $first->getId());
     }
 
@@ -96,7 +96,7 @@ class FluentAuthCodeTest extends AbstractDBTestCase
         $repo->create('newauthcode', $time, 1, 'http://example1.com');
         $result = $repo->get('newauthcode');
 
-        $this->assertInstanceOf('League\OAuth2\Server\Entity\AuthCodeEntity', $result);
+        $this->assertInstanceOf('LeagueFork\OAuth2\Server\Entity\AuthCodeEntity', $result);
         $this->assertEquals('newauthcode', $result->getId());
         $this->assertInternalType('int', $result->getExpireTime());
         $this->assertEquals($time, $result->getExpireTime());

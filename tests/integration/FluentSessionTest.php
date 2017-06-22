@@ -16,9 +16,9 @@ class FluentSessionTest extends AbstractDBTestCase
 {
     public function getSessionRepository()
     {
-        $emitter = m::mock('League\Event\Emitter');
+        $emitter = m::mock('LeagueFork\Event\Emitter');
         $emitter->shouldReceive('emit')->once();
-        $server = m::mock('League\OAuth2\Server\AbstractServer');
+        $server = m::mock('LeagueFork\OAuth2\Server\AbstractServer');
         $server->shouldReceive('getEventEmitter')->once()->andReturn($emitter);
         $repo = new FluentSession($this->app['db']);
         $repo->setServer($server);
@@ -33,7 +33,7 @@ class FluentSessionTest extends AbstractDBTestCase
         $id = $repo->create('user', '1', 'client1');
         $session = $repo->get($id);
 
-        $this->assertInstanceOf('League\OAuth2\Server\Entity\SessionEntity', $session);
+        $this->assertInstanceOf('LeagueFork\OAuth2\Server\Entity\SessionEntity', $session);
         $this->assertEquals('user', $session->getOwnerType());
         $this->assertEquals('1', $session->getOwnerId());
     }
@@ -47,13 +47,13 @@ class FluentSessionTest extends AbstractDBTestCase
 
     public function test_scope_is_associated()
     {
-        $session = m::mock('League\OAuth2\Server\Entity\SessionEntity');
+        $session = m::mock('LeagueFork\OAuth2\Server\Entity\SessionEntity');
         $session->shouldReceive('getId')->twice()->andReturn(1);
 
-        $scope1 = m::mock('League\OAuth2\Server\Entity\ScopeEntity');
+        $scope1 = m::mock('LeagueFork\OAuth2\Server\Entity\ScopeEntity');
         $scope1->shouldReceive('getId')->once()->andReturn('scope1');
 
-        $scope2 = m::mock('League\OAuth2\Server\Entity\ScopeEntity');
+        $scope2 = m::mock('LeagueFork\OAuth2\Server\Entity\ScopeEntity');
         $scope2->shouldReceive('getId')->once()->andReturn('scope2');
 
         $repo = $this->getSessionRepository();
@@ -66,12 +66,12 @@ class FluentSessionTest extends AbstractDBTestCase
         $this->assertInternalType('array', $result);
         $this->assertEquals(2, count($result));
         $first = $result[0];
-        $this->assertInstanceOf('League\OAuth2\Server\Entity\ScopeEntity', $first);
+        $this->assertInstanceOf('LeagueFork\OAuth2\Server\Entity\ScopeEntity', $first);
     }
 
     public function test_null_is_returned_when_session_is_requested_by_invalid_auth_code()
     {
-        $authCode = m::mock('League\OAuth2\Server\Entity\AuthCodeEntity');
+        $authCode = m::mock('LeagueFork\OAuth2\Server\Entity\AuthCodeEntity');
         $authCode->shouldReceive('getId')->once()->andReturn('unexistingcode');
 
         $repo = $this->getSessionRepository();
@@ -83,21 +83,21 @@ class FluentSessionTest extends AbstractDBTestCase
 
     public function test_a_session_is_returned_when_session_is_requested_by_valid_auth_code()
     {
-        $authCode = m::mock('League\OAuth2\Server\Entity\AuthCodeEntity');
+        $authCode = m::mock('LeagueFork\OAuth2\Server\Entity\AuthCodeEntity');
         $authCode->shouldReceive('getId')->once()->andReturn('totallyanauthcode1');
 
         $repo = $this->getSessionRepository();
 
         $session = $repo->getByAuthCode($authCode);
 
-        $this->assertInstanceOf('League\OAuth2\Server\Entity\SessionEntity', $session);
+        $this->assertInstanceOf('LeagueFork\OAuth2\Server\Entity\SessionEntity', $session);
         $this->assertEquals('user', $session->getOwnerType());
         $this->assertEquals('1', $session->getOwnerId());
     }
 
     public function test_null_is_returned_when_session_is_requested_by_invalid_access_token()
     {
-        $accessToken = m::mock('League\OAuth2\Server\Entity\AccessTokenEntity');
+        $accessToken = m::mock('LeagueFork\OAuth2\Server\Entity\AccessTokenEntity');
         $accessToken->shouldReceive('getId')->once()->andReturn('unexistingaccesstoken');
 
         $repo = $this->getSessionRepository();
@@ -109,14 +109,14 @@ class FluentSessionTest extends AbstractDBTestCase
 
     public function test_a_session_is_returned_when_session_is_requested_by_valid_access_token()
     {
-        $accessToken = m::mock('League\OAuth2\Server\Entity\AccessTokenEntity');
+        $accessToken = m::mock('LeagueFork\OAuth2\Server\Entity\AccessTokenEntity');
         $accessToken->shouldReceive('getId')->once()->andReturn('totallyanaccesstoken1');
 
         $repo = $this->getSessionRepository();
 
         $session = $repo->getByAccessToken($accessToken);
 
-        $this->assertInstanceOf('League\OAuth2\Server\Entity\SessionEntity', $session);
+        $this->assertInstanceOf('LeagueFork\OAuth2\Server\Entity\SessionEntity', $session);
         $this->assertEquals('user', $session->getOwnerType());
         $this->assertEquals('1', $session->getOwnerId());
     }

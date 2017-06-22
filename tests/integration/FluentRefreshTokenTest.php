@@ -16,7 +16,7 @@ class FluentRefreshTokenTest extends AbstractDBTestCase
 {
     public function getRefreshTokenRepository()
     {
-        $server = m::mock('League\OAuth2\Server\AbstractServer');
+        $server = m::mock('LeagueFork\OAuth2\Server\AbstractServer');
         $repo = new FluentRefreshToken($this->app['db']);
         $repo->setServer($server);
 
@@ -29,7 +29,7 @@ class FluentRefreshTokenTest extends AbstractDBTestCase
 
         $result = $repo->get('totallyarefreshtoken1');
 
-        $this->assertInstanceOf('League\OAuth2\Server\Entity\RefreshTokenEntity', $result);
+        $this->assertInstanceOf('LeagueFork\OAuth2\Server\Entity\RefreshTokenEntity', $result);
         $this->assertEquals('totallyarefreshtoken1', $result->getId());
         $this->assertInternalType('int', $result->getExpireTime());
     }
@@ -45,7 +45,7 @@ class FluentRefreshTokenTest extends AbstractDBTestCase
 
     public function test_it_deletes_a_refresh_token()
     {
-        $token = m::mock('League\OAuth2\Server\Entity\RefreshTokenEntity');
+        $token = m::mock('LeagueFork\OAuth2\Server\Entity\RefreshTokenEntity');
         $token->shouldReceive('getId')->once()->andReturn('totallyarefreshtoken1');
 
         $repo = $this->getRefreshTokenRepository();
@@ -63,7 +63,7 @@ class FluentRefreshTokenTest extends AbstractDBTestCase
         $time = time() + 120;
         $result = $repo->create('newrefreshtoken', $time, 'totallyanaccesstoken2');
 
-        $this->assertInstanceOf('League\OAuth2\Server\Entity\RefreshTokenEntity', $result);
+        $this->assertInstanceOf('LeagueFork\OAuth2\Server\Entity\RefreshTokenEntity', $result);
         $this->assertEquals('newrefreshtoken', $result->getId());
         $this->assertInternalType('int', $result->getExpireTime());
         $this->assertEquals($time, $result->getExpireTime());

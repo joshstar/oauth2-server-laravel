@@ -12,7 +12,7 @@
 namespace unit\LucaDegasperi\OAuth2Server\Middleware;
 
 use Illuminate\Http\Request;
-use League\OAuth2\Server\Exception\InvalidRequestException;
+use LeagueFork\OAuth2\Server\Exception\InvalidRequestException;
 use LucaDegasperi\OAuth2Server\Authorizer;
 use PhpSpec\ObjectBehavior;
 

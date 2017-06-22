@@ -16,7 +16,7 @@ class FluentClientTest extends AbstractDBTestCase
 {
     public function getClientRepository()
     {
-        $server = m::mock('League\OAuth2\Server\AbstractServer');
+        $server = m::mock('LeagueFork\OAuth2\Server\AbstractServer');
         $repo = new FluentClient($this->app['db']);
         $repo->setServer($server);
 
@@ -91,7 +91,7 @@ class FluentClientTest extends AbstractDBTestCase
     {
         $repo = $this->getClientRepository();
 
-        $session = m::mock('League\OAuth2\Server\Entity\SessionEntity');
+        $session = m::mock('LeagueFork\OAuth2\Server\Entity\SessionEntity');
         $session->shouldReceive('getId')->once()->andReturn(1);
 
         $result = $repo->getBySession($session);
@@ -102,7 +102,7 @@ class FluentClientTest extends AbstractDBTestCase
     {
         $repo = $this->getClientRepository();
 
-        $session = m::mock('League\OAuth2\Server\Entity\SessionEntity');
+        $session = m::mock('LeagueFork\OAuth2\Server\Entity\SessionEntity');
         $session->shouldReceive('getId')->once()->andReturn(20);
 
         $result = $repo->getBySession($session);
@@ -111,7 +111,7 @@ class FluentClientTest extends AbstractDBTestCase
 
     public function assertIsClient($client, $redirectUri = true)
     {
-        $this->assertInstanceOf('League\OAuth2\Server\Entity\ClientEntity', $client);
+        $this->assertInstanceOf('LeagueFork\OAuth2\Server\Entity\ClientEntity', $client);
         $this->assertEquals('client1id', $client->getId());
         $this->assertEquals('client1secret', $client->getSecret());
         $this->assertEquals('client1', $client->getName());

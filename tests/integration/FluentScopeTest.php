@@ -16,7 +16,7 @@ class FluentScopeTest extends AbstractDBTestCase
 {
     public function getScopeRepository()
     {
-        $server = m::mock('League\OAuth2\Server\AbstractServer');
+        $server = m::mock('LeagueFork\OAuth2\Server\AbstractServer');
         $repo = new FluentScope($this->app['db']);
         $repo->setServer($server);
 
@@ -101,7 +101,7 @@ class FluentScopeTest extends AbstractDBTestCase
 
     public function assertIsScope($result)
     {
-        $this->assertInstanceOf('League\OAuth2\Server\Entity\ScopeEntity', $result);
+        $this->assertInstanceOf('LeagueFork\OAuth2\Server\Entity\ScopeEntity', $result);
         $this->assertEquals('scope1', $result->getId());
         $this->assertEquals('Scope 1 Description', $result->getDescription());
     }

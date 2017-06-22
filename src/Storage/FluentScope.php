@@ -12,8 +12,8 @@
 namespace LucaDegasperi\OAuth2Server\Storage;
 
 use Illuminate\Database\ConnectionResolverInterface as Resolver;
-use League\OAuth2\Server\Entity\ScopeEntity;
-use League\OAuth2\Server\Storage\ScopeInterface;
+use LeagueFork\OAuth2\Server\Entity\ScopeEntity;
+use LeagueFork\OAuth2\Server\Storage\ScopeInterface;
 
 /**
  * This is the fluent scope class.
@@ -103,7 +103,7 @@ class FluentScope extends AbstractFluentAdapter implements ScopeInterface
      * @param string $grantType The grant type used in the request (default = "null")
      * @param string $clientId The client id used for the request (default = "null")
      *
-     * @return \League\OAuth2\Server\Entity\ScopeEntity|null If the scope doesn't exist return false
+     * @return \LeagueFork\OAuth2\Server\Entity\ScopeEntity|null If the scope doesn't exist return false
      */
     public function get($scope, $grantType = null, $clientId = null)
     {

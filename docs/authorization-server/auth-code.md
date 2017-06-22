@@ -5,7 +5,7 @@
     ```php
     'grant_types' => [
         'authorization_code' => [
-            'class' => '\League\OAuth2\Server\Grant\AuthCodeGrant',
+            'class' => '\LeagueFork\OAuth2\Server\Grant\AuthCodeGrant',
             'access_token_ttl' => 3600,
             'auth_token_ttl'   => 3600
         ]

@@ -13,7 +13,7 @@ namespace LucaDegasperi\OAuth2Server\Middleware;
 
 use Closure;
 use Illuminate\Http\JsonResponse;
-use League\OAuth2\Server\Exception\OAuthException;
+use LeagueFork\OAuth2\Server\Exception\OAuthException;
 
 /**
  * This is the exception handler middleware class.
