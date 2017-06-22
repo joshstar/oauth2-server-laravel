@@ -15,14 +15,28 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "illuminate/database": "5.1.* || 5.2.* || 5.3.* || 5.4.*",
-        "illuminate/console": "5.1.* || 5.2.* || 5.3.* || 5.4.*",
-        "illuminate/contracts": "5.1.* || 5.2.* || 5.3.* || 5.4.*",
-        "illuminate/http": "5.1.* || 5.2.* || 5.3.* || 5.4.*",
-        "illuminate/support": "5.1.* || 5.2.* || 5.3.* || 5.4.*",
-        "illuminate/config": "5.1.* || 5.2.* || 5.3.* || 5.4.*",
-        "league/oauth2-server": "4.1.*"
+        "illuminate/database": "5.*",
+        "illuminate/console": "5.*",
+        "illuminate/contracts": "5.*",
+        "illuminate/http": "5.*",
+        "illuminate/support": "5.*",
+        "illuminate/config": "5.*",
+        "joshstar/oauth2-server": "4.1.*"
     },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "joshstar/oauth2-server",
+                "version": "4.1.0",
+                "source": {
+                    "url": "https://github.com/joshstar/oauth2-server",
+                    "type": "git",
+                    "reference": "4.1.0"
+                }
+            }
+        }
+    ],
     "require-dev": {
         "orchestra/testbench": "3.1.* || 3.2.*",
         "phpunit/phpunit": "^4.8 || ^5.0",
